@@ -1,0 +1,40 @@
+<a href="#"
+  {{action "toggleSelectUser"}}
+  class="Big-card__select-user
+         db f6 br2 ba bw1 b--white dark-blue bg-light-gray">
+
+    {{#if card.user}}
+      {{gravatar-image
+        email=card.user.email
+        class="db w2 h2 br2"}}
+    {{else}}
+      {{fa-icon "plus" class="pa2"}}
+    {{/if}}
+
+</a>
+
+{{#if isShowingSelectUser}}
+  {{#tether-dialog
+    target='.Big-card__select-user'
+    targetAttachment='bottom right'
+    attachment='top right'}}
+
+      <div class="br2 bg-white ph3 pt3 mt1 w4">
+
+        {{#each assignableUsers.lastSuccessful.value as |user|}}
+          <div class="flex items-center pointer pb3"
+            {{action "assignUser" user}}>
+              {{gravatar-image
+                email=user.email
+                class="br2 w2 h2"}}
+
+              <div class="ml2">
+                {{user.name}}
+              </div>
+          </div>
+        {{/each}}
+
+      </div>
+
+  {{/tether-dialog}}
+{{/if}}

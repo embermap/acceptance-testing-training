@@ -1,5 +1,8 @@
 {
   "name": "acceptance-testing-training",
   "dependencies": {
+    "blueimp-md5": "2.1.0",
+    "dragula": "3.5.4",
+    "tachyons": "4.6.2"
   }
 }
