@@ -4,7 +4,7 @@ Hi there!
 
 We're super excited that you're attending our EmberConf acceptance testing training on Monday. Please follow these instructions to setup your computer with our training app. It should take no more than ten minutes.
 
-We need to install a couple of NPM packages for this training. Sicne conference center wifi isn't always the most reliable thing it's going to be easier if you can to do the setup at home or work.
+We need to install a couple of NPM packages for this training. Since conference center wifi isn't always the most reliable thing it's going to be easier if you can to do the setup at home or work.
 
 # Installation
 
