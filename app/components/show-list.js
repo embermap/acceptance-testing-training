@@ -1,9 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  actions: {
-    move() {
-      // TODO
-    }
+  draggable: null,
+
+  didInsertElement() {
+    let draggable = this.get('draggable');
+    draggable.registerAsGroup(this, '.Show-list__cards');
   }
+
 });

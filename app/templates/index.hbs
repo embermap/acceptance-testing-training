@@ -1,9 +1,12 @@
 <div class="flex">
-  {{#each model as |list|}}
 
-    <div class="mr3">
-      {{show-list list=list}}
-    </div>
+  {{#draggable-group as |draggable|}}
+    {{#each model as |list|}}
 
-  {{/each}}
+      <div class="mr3">
+        {{show-list list=list draggable=draggable}}
+      </div>
+
+    {{/each}}
+  {{/draggable-group}}
 </div>

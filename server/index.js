@@ -58,6 +58,10 @@ module.exports = function(/* app */) {
                     .optional()
                     .default('')
                     .example("About the card"),
+      order: jsonApi.Joi.number()
+              .integer()
+              .default(0)
+              .example(0),
       list: jsonApi.Joi.one('lists'),
       user: jsonApi.Joi.one('users'),
     },
@@ -67,24 +71,31 @@ module.exports = function(/* app */) {
         type: 'cards',
         title: 'My first card',
         description: 'The first card',
+        order: 1,
         list: { type: 'lists', id: '1' }
       },
       {
         id: '2',
         type: 'cards',
         title: 'Attend EmberConf!',
+        description: ' ',
+        order: 2,
         list: { type: 'lists', id: '1' }
       },
       {
         id: '3',
         type: 'cards',
         title: 'Write some tests',
+        description: ' ',
+        order: 3,
         list: { type: 'lists', id: '1' }
       },
       {
         id: '4',
         type: 'cards',
         title: 'Buy EmberConf flight',
+        description: ' ',
+        order: 4,
         list: { type: 'lists', id: '2' }
       }
     ]

@@ -21,6 +21,8 @@ module.exports = function(defaults) {
 
   app.import('vendor/reset.css');
   app.import('bower_components/tachyons/css/tachyons.css');
+  app.import('bower_components/dragula/dist/dragula.js');
+  app.import('bower_components/dragula/dist/dragula.css');
 
   return app.toTree();
 };

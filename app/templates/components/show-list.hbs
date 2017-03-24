@@ -3,10 +3,12 @@
     {{list.name}}
   </h3>
 
-  <div class="mb3">
+  <div class="pb3 Show-list__cards">
 
-    {{#each list.cards as |card|}}
-      {{!small-card card=card}}
+    {{#each (sort-by "order" list.cards) as |card|}}
+      {{small-card
+        card=card
+        draggable=draggable}}
     {{/each}}
 
   </div>
