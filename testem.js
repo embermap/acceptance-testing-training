@@ -6,7 +6,11 @@ module.exports = {
     "PhantomJS"
   ],
   "launch_in_dev": [
-    "PhantomJS",
     "Chrome"
-  ]
+  ],
+  "proxies": {
+    "/api": {
+      "target": "http://localhost:16006"
+    }
+  }
 };

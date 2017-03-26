@@ -1,0 +1,27 @@
+  {{#if isAdding}}
+
+    <form {{action "save" on="submit"}}>
+      <label class="db b mb1">
+        New card
+      </label>
+      {{textarea
+        value=newCard.title
+        placeholder="Add a card..."
+        class="Add-card__text br2 pa2 w-100"}}
+
+      <input type="submit" value="Save"
+        class="Add-card__save f6 ph3 pv2 br2 bg-green white pointer">
+
+      <button {{action "hideForm"}}
+        class="f6 ph3 pv2 br2 bg-moon-gray near-black pointer">
+          Cancel
+      </button>
+    </form>
+
+  {{else}}
+    <a href="#"
+      {{action "showForm"}}
+      class="f6 gray">
+        {{fa-icon "plus"}} Add
+    </a>
+  {{/if}}

@@ -1,0 +1,37 @@
+<div class="bg-white-60 near-black br2 pa3
+            flex justify-between">
+
+  <div class="flex-auto mr4">
+    {{#if isEditing}}
+      {{edit-card
+        card=card
+        after-save=(action "toggleEdit")
+        cancel=(action "toggleEdit")}}
+    {{else}}
+      <h1 class="Big-card__title
+                 lh-title f3 pa0 ma0 mb2">
+        {{card.title}}
+      </h1>
+      <p class="Big-card__description
+        f5 measure lh-copy mb3">
+        {{card.description}}
+      </p>
+
+      <div>
+        <a href="#"
+          class="Big-card__edit-link link dark-blue"
+          {{action "toggleEdit"}}>
+            Edit
+        </a>
+
+        <a href="#" class="link dark-blue"
+          {{action "destroy"}}>
+            Delete
+        </a>
+      </div>
+    {{/if}}
+  </div>
+
+  {{assign-user card=card}}
+
+</div>

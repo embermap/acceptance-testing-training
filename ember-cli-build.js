@@ -19,5 +19,10 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  app.import('vendor/reset.css');
+  app.import('bower_components/tachyons/css/tachyons.css');
+  app.import('bower_components/dragula/dist/dragula.js');
+  app.import('bower_components/dragula/dist/dragula.css');
+
   return app.toTree();
 };

@@ -1,0 +1,30 @@
+<form {{action "save" on="submit"}}>
+
+  <div class="mb3">
+    <label class="db b mb1">
+      Title
+    </label>
+    {{input
+      value=card.title
+      class="Edit-card__title br2 pa2 w-50"}}
+  </div>
+
+  <div class="mb3">
+    <label class="db b mb1">
+      Description
+    </label>
+    {{textarea
+      value=card.description
+      class="br2 pa2 w-70 h4"}}
+  </div>
+
+  <input type="submit" value="Save"
+    class="Edit-card__save-button
+           ph3 pv2 br2 bg-green white pointer">
+
+  <button {{action cancel}}
+    class="ph3 pv2 br2 bg-moon-gray near-black pointer">
+      Cancel
+  </button>
+
+</form>

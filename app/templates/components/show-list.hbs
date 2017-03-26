@@ -1,0 +1,18 @@
+<div class="bg-white-60 br2 pa3 w5">
+  <h3 class="b bb b--white-20 pb2 mb3">
+    {{list.name}}
+  </h3>
+
+  <div class="pb3 Show-list__cards">
+
+    {{#each (sort-by "order" list.cards) as |card|}}
+      {{small-card
+        card=card
+        draggable=draggable}}
+    {{/each}}
+
+  </div>
+
+  {{add-card list=list}}
+
+</div>
