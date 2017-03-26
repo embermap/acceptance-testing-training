@@ -3,6 +3,8 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   list: null,
 
+  classNames: ['Add-card'],
+
   store: Ember.inject.service(),
 
   isAdding: false,
@@ -30,8 +32,10 @@ export default Ember.Component.extend({
     save() {
       let card = this.get('newCard');
       let list = this.get('list');
+      let order = Math.max( ...list.get('cards').mapBy('order').concat(0) );
 
-      card.set('list', list);
+      card.setProperties({ list, order });
+
       card.save();
 
       this.hideForm();

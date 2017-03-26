@@ -18,24 +18,25 @@ export default Ember.Component.extend({
     let drake = window.dragula();
 
     this.set('drake', drake);
-
+    
     drake.on('drop', (el, target, source, sibling) => {
-      let item = this.findItem(el);
-      let newGroup = this.findGroup(target);
-      let oldGroup = this.findGroup(source);
-      let before = this.findItem(sibling);
+      Ember.run(() => {
+        let item = this.findItem(el);
+        let newGroup = this.findGroup(target);
+        let oldGroup = this.findGroup(source);
+        let before = this.findItem(sibling);
 
-      let f = item.get('onMove');
+        let f = item.get('onMove');
 
-      if (f) {
-        f.apply(item, [before, newGroup, oldGroup]);
-      }
+        if (f) {
+          f.apply(item, [before, newGroup, oldGroup]);
+        }
 
-      if (target !== source) {
-        drake.remove();
-        //Ember.$(el).remove();
-      }
-    })
+        if (target !== source) {
+          drake.remove();
+        }
+      });
+    });
   },
 
   registerAsGroup(component, container) {

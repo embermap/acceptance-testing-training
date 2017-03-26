@@ -112,6 +112,7 @@ module.exports = function(/* app */) {
     examples: [
       {
         id: '1',
+        type: 'users',
         name: 'Ryan',
         email: 'ryanto@gmail.com',
         cards: [
@@ -121,6 +122,7 @@ module.exports = function(/* app */) {
       {
         id: '2',
         name: 'Sam',
+        type: 'users',
         email: 'sam.selikoff@gmail.com',
         cards: [
 
